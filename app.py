@@ -25,7 +25,7 @@ def download_audio(link):
 
 
 
-downloaded = st.button('다운로드받기', on_click=download_audio, args=[url])
+downloaded = st.button('주소점검하기(1단계)', on_click=download_audio, args=[url])
 
 if downloaded:
     st.write(st.session_state['video_title'])
