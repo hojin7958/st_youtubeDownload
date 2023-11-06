@@ -20,7 +20,7 @@ if check_password == '7958':
 
     def download_audio(link):
         global video_title
-        with yt_dlp.YoutubeDL({'extract_audio': True, 'format': 'bestaudio', 'outtmpl': '%(title)s.mp3'}) as video:
+        with yt_dlp.YoutubeDL({'extract_audio': True, 'format': 'bestaudio', 'outtmpl': 'temp.mp3'}) as video:
             info_dict = video.extract_info(link, download = True)
             video_title = info_dict['title']
             print(video_title)
@@ -34,7 +34,7 @@ if check_password == '7958':
 
     if downloaded:
         st.write(st.session_state['video_title'])
-        file_name = st.session_state['video_title'] + ".mp3"
+        file_name = "temp.mp3"
 
         with open(file_name, "rb") as file:
             btn = ste.download_button(
